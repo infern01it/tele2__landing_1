@@ -1,0 +1,160 @@
+$height: 285px
+$angle: 8deg
+	
+.sect-main
+	width: 100%
+	height: 780px
+	&__layer
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		overflow: hidden
+		&_1
+			z-index: 1
+		&_2
+			z-index: 2
+		&_3
+			z-index: 3
+	&__arrows
+		position: absolute
+		z-index: 4
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 1px
+
+.sect-figure
+	&__top,
+	&__bottom,
+	&__reverse
+		position: absolute
+		bottom: 0
+		right: 0
+		width: 100%
+		height: 100%
+	&__top
+		z-index: 2
+	&__bottom
+		z-index: 1
+	&__reverse
+		bottom: $height * -1
+		left: 50%
+		width: 200%
+		height: ($height * 2)
+		transform-origin: 50% 50%
+		transform: translate(-50%) rotate(#{$angle})
+		position: absolute
+		background-color: $ac
+	&__col-7
+		position: absolute
+		left: 50%
+		bottom: 74px
+		transform: translateX(#{_col(6, lg) * -1})
+		width: _col(7, lg)
+		+b4p
+	&__box
+		width: 100%
+		height: 431px
+		background-color: #000
+
+.sect-main-people
+	&__top,
+	&__bottom,
+	&__reverse
+		position: absolute
+		bottom: 0
+		right: 0
+		width: 100%
+		height: 100%
+	&__bottom
+		overflow: hidden
+		height: $height
+		transform-origin: 50% 100%
+		transform: rotate(#{$angle})
+	&__reverse
+		transform-origin: 50% 100%
+		transform: rotate(#{$angle * -1})
+		position: absolute
+	&__col-6
+		position: absolute
+		width: _col(6, lg)
+		left: 50%
+		bottom: 0
+		+b4p
+
+.sect-text
+	&__top,
+	&__reverse
+		position: absolute
+		bottom: 0
+		right: 0
+		width: 100%
+		height: 100%
+	&__top
+		z-index: 2
+	&__col-7
+		position: absolute
+		left: 50%
+		bottom: 74px
+		transform: translateX(#{_col(6, lg) * -1})
+		width: _col(7, lg)
+		+b4p
+	&__box
+		width: 100%
+		height: 431px
+
+.black-box
+	padding: 49px 41px 66px 49px
+	&__title
+		font-family: 'StandardCTStencil'
+		font-size: 59px
+		font-weight: 700
+		line-height: 70px
+		color: #ffffff
+		text-transform: uppercase
+		margin: 0 0 23px
+	&__desc
+		font-size: 18px
+		line-height: 27px
+		color: #ffffff
+		margin: 0 0 43px
+		p
+			margin: 0
+		a
+			color: $ac !important
+			text-decoration: underline
+		ul
+			margin: 0
+			padding-left: 20px
+
+.arrow-anim-1
+	&__arrow
+		position: absolute
+		left: 50%
+		transform: translateX(170px)
+		width: 227px
+		height: auto
+		bottom: -189px
+		&_1
+			animation: arrow-1 6s ease-in 0s infinite backwards
+		&_2
+			animation: arrow-1 6s ease-in 1.5s infinite backwards
+		&_3
+			animation: arrow-1 6s ease-in 3s infinite backwards
+		&_4
+			animation: arrow-1 6s ease-in 4.5s infinite backwards
+
+@keyframes arrow-1 
+	0%
+		opacity: 0
+		transform: translate(97px, -370px) scale(0.11)
+	25%, 75%
+		opacity: 1
+	99%
+		opacity: 0
+		transform: translate(170px, 0) scale(1)
+	100%
+		opacity: 0
+		transform: translate(97px, -370px) scale(0.11)

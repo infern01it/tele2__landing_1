@@ -1,0 +1,202 @@
+.sect-3
+	padding: 118px 0 152px
+	background-color: #f2f2f2
+	&__anim
+		position: absolute
+		z-index: 1
+		bottom: 0
+		width: _col(7, lg)
+		left: 50%
+		transform: translateX(#{_col(8, lg) * -1})
+	&__content
+		position: relative
+		z-index: 2
+	&__title
+		margin: 0 0 32px
+	&__desc
+		margin: 0 0 83px
+		p
+			margin-bottom: 27px
+			&:last-child
+				margin-bottom: 1px
+	&__arrows
+		position: absolute
+		z-index: 4
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 1px
+
+// Анимации
+.sect-3
+	$p: &
+	&__title,
+	&__desc,
+	&__icon
+		opacity: 0
+	&.anim
+		#{$p}
+			&__title,
+			&__desc,
+			&__icon
+				animation: s2-anim .8s ease-out 0s 1 forwards
+			&__title
+				animation-delay: 0
+			&__desc
+				animation-delay: .5s
+			&__icon
+				&_1
+					animation-delay: 1s
+				&_2
+					animation-delay: 1.4s
+				&_3
+					animation-delay: 1.8s
+
+@keyframes s2-anim
+	0%
+		transform: translateY(10px)
+		opacity: 0
+	100%
+		transform: translateY(0)
+		opacity: 1
+
+.icon-nav
+	display: flex
+	flex-direction: column
+	align-items: center
+	&__icon
+		width: 72px
+		height: 72px
+		display: flex
+		justify-content: center
+		align-items: center
+		border-radius: 50%
+		margin: 0 0 16px
+	&__desc
+		font-family: 'Tele2DisplaySerif', serif
+		font-size: 18px
+		font-weight: 400
+		line-height: 24px
+		color: #000000
+		text-align: center
+		a
+			text-decoration: underline
+			color: #000000
+
+.s3-anim
+	&__img
+		position: absolute
+		bottom: 0
+		right: 0
+		width: auto
+		height: 594px
+		&_left
+			z-index: 1
+		&_right
+			z-index: 3
+	&__btn
+		position: absolute
+		z-index: 2
+		bottom: 330px
+		right: 343px
+		width: 50px
+		height: 50px
+		border-radius: 50%
+		background-color: $ac
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-color: $ac
+			border-radius: 50%
+		&.anim
+			&::before
+				animation: phone-button 1.5s ease-in 0s 3 backwards
+
+@keyframes phone-button
+	0%
+		opacity: 0
+		transform: scale(1)
+	15%, 75%
+		opacity: 0.8
+	99%
+		opacity: 0
+		transform: scale(1.5)
+	100%
+		opacity: 0
+		transform: scale(1)
+
+.s3-arrow-anim
+	transform: rotate(-45deg)
+	&__arrow
+		position: absolute
+		left: 50%
+		margin-left: _col(2, lg) * -1
+		width: 227px
+		height: 184px
+		bottom: 350px
+		transform-origin: 50% 50%
+		transition: all .5s ease-out
+		opacity: 0
+		&_1
+			transform: matrix(0.961484, 0, 0, 0.961484, 66.6299, 666.299)
+			&.anim
+				animation: s3-anim-arrow-1 .5s ease-in 0s 1 forwards
+		&_2
+			transform: matrix(0.66273, 0, 0, 0.66273, 40.4889, 404.889)
+			&.anim
+				animation: s3-anim-arrow-2 .5s ease-in 0s 1 forwards
+		&_3
+			transform: matrix(0.423747, 0, 0, 0.423747, 19.5778, 195.778)
+			&.anim
+				animation: s3-anim-arrow-2 .5s ease-in 0s 1 forwards
+		&_4
+			transform: matrix(0.256228, 0, 0, 0.256228, 4.91996, 49.1996)
+			&.anim
+				animation: s3-anim-arrow-4 .5s ease-in 0s 1 forwards
+
+@keyframes s3-anim-arrow-1
+	0%
+		opacity: 0
+	100%
+		opacity: 0.229574
+
+@keyframes s3-anim-arrow-2
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+
+@keyframes s3-anim-arrow-4
+	0%
+		opacity: 0
+	100%
+		opacity: 0.720452
+
+// .s3-arrow-anim
+// 	&__arrow
+// 		&_1
+// 			animation: arrow-2 4s ease-in 0s infinite backwards
+// 		&_2
+// 			animation: arrow-2 4s ease-in 1s infinite backwards
+// 		&_3
+// 			animation: arrow-2 4s ease-in 2s infinite backwards
+// 		&_4
+// 			animation: arrow-2 4s ease-in 3s infinite backwards
+
+// @keyframes arrow-2
+// 	0%
+// 		opacity: 0
+// 		transform: translate(0, 0) scale(0.2)
+// 	25%, 75%
+// 		opacity: 1
+// 	99%
+// 		opacity: 0
+// 		transform: translate(70px, 700px) scale(1)
+// 	100%
+// 		opacity: 0
+// 		transform: translate(0, 0) scale(0.11)

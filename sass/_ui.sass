@@ -1,0 +1,63 @@
+//@import "bourbon"
+//@import "snippets"
+
+//*
+	+backface-visibility(hidden)
+
+html,
+body
+	overflow-x: hidden
+
+body
+	min-width: 320px
+	position: relative
+	font-family: "Tele2TextSans", sans-serif
+	font-size: 18px
+	line-height: 27px
+	font-weight: 400
+
+section
+	position: relative
+
+strong, b
+	font-weight: 700
+
+em, i
+	font-style: italic
+
+a
+	transition: all .2s ease-out
+	&:hover
+		color: $acHover !important
+
+.t2-btn
+	display: inline-block
+	min-width: 231px
+	height: 64px
+	font-size: 21px
+	line-height: 60px
+	border: 2px solid #fff
+	outline: none !important
+	background-color: transparent
+	cursor: pointer
+	border-radius: 32px
+	text-align: center
+	text-decoration: none !important
+	&_full
+		background-color: #fff
+		color: #000000 !important
+		&:hover
+			background-color: transparent
+			color: #ffffff !important
+	&_border
+		color: #ffffff !important
+		&:hover
+			background-color: #ffffff
+			color: #000000 !important
+
+.title-sect
+	font-family: 'Tele2DisplaySerif', serif
+	font-size: 48px
+	font-weight: 400
+	line-height: 64px
+	color: #000

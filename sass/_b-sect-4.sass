@@ -1,0 +1,121 @@
+.sect-4
+	padding: 248px 0 91px
+	&__anim
+		position: absolute
+		z-index: 1
+		bottom: 0
+		width: _col(7, lg)
+		left: 50%
+		transform: translateX(#{_col(3, lg)})
+	&__content
+		position: relative
+		z-index: 2
+	&__title
+		margin: 0 0 32px
+	&__desc
+		margin: 0 0 75px
+		color: $text
+		p
+			margin-bottom: 27px
+			&:last-child
+				margin-bottom: 1px
+	&__more
+		font-family: 'Tele2DisplaySerif', serif
+		text-align: center
+		a
+			color: #000000
+			text-decoration: underline
+			transition: all .2s ease-out
+
+.s4-anim
+	&__img
+		position: absolute
+		bottom: 0
+		right: 0
+		width: auto
+		height: 771px
+	&__btn
+		position: absolute
+		bottom: 370px
+		right: 550px
+
+.s4-anim-btn
+	$p: &
+	width: 64px
+	height: 64px
+	border-radius: 50%
+	&.anim
+		animation: s4-anim-btn .3s ease-in-out 1s 1 forwards
+		#{$p}__circle
+			animation: s4-anim-circle 1s ease-in-out 0s 1 forwards
+		#{$p}__check
+			animation: s4-anim-check 2s ease-in-out 1.3s 1 forwards
+		&::before
+			animation: s4-anim-before 1.5s ease-in 1.3s infinite forwards
+	&__circle,
+	&__check
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		opacity: 0
+	&__circle
+		z-index: 1
+		transform: rotate(90deg)
+		path
+			stroke: $ac
+	&__check
+		z-index: 2
+		path
+			stroke: #fff
+	&::before
+		content: ''
+		display: block
+		position: absolute
+		z-index: 1
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $ac
+		border-radius: 50%
+		opacity: 0
+
+@keyframes s4-anim-btn
+	0%
+		background-color: transparent
+	100%
+		background-color: $ac
+
+@keyframes s4-anim-circle
+	0%
+		opacity: 1
+		stroke-dasharray: 0 201
+	100%
+		opacity: 1
+		stroke-dasharray: 201 0
+		stroke-dashoffset: 0
+
+@keyframes s4-anim-check
+	0%
+		opacity: 1
+		stroke-dasharray: 0 111
+	15%, 100%
+		opacity: 1
+		stroke-dasharray: 111 0
+		stroke-dashoffset: 0
+
+@keyframes s4-anim-before
+	0%
+		opacity: 0
+		transform: scale(1)
+	15%, 75%
+		opacity: 0.8
+	99%
+		opacity: 0
+		transform: scale(1.5)
+	100%
+		opacity: 0
+		transform: scale(1)

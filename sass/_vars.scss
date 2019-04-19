@@ -1,0 +1,41 @@
+// Общие настройки
+$font-formats: ("eot", "woff", "ttf"); // Доступны в snippets - eot, woff2, woff, ttf, svg
+$url-img: '/img';
+$url-font: '/fonts';
+
+// Переменные цветов
+$ac: #c3e400;
+$acHover: #9cb700;
+$text: #4a4a4a;
+
+// Настройки Bootstrap 
+$breakpoints: (
+	'xs': 0,
+	'sm': 768px,
+	'md': 992px,
+	'lg': 1260px
+) !default;
+
+$max-widths: (
+	'xs': 100%,
+	'sm': 720px,
+	'md': 960px,
+	'lg': 1248px
+) !default;
+
+// Customization Bootstrap vars from "bootstrap/_variables.scss"
+$grid-gutter-width: 32px;
+$grid-columns: 12;
+
+$grid-breakpoints: (
+	'xs': map-get($breakpoints, 'xs'),
+	'sm': map-get($breakpoints, 'sm'),
+	'md': map-get($breakpoints, 'md'),
+	'lg': map-get($breakpoints, 'lg')
+);
+
+$container-max-widths: (
+	'sm': map-get($max-widths, 'sm'),
+	'md': map-get($max-widths, 'md'),
+	'lg': map-get($max-widths, 'lg')
+);

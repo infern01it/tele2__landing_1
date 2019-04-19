@@ -1,0 +1,65 @@
+.sect-2
+	padding: 144px 0
+	&__title,
+	&__desc
+		text-align: center
+	&__title
+		margin-bottom: 33px
+	&__desc
+		margin: 0 0 79px
+		p
+			margin: 0
+
+// Анимации
+.sect-2
+	$p: &
+	&__title,
+	&__desc,
+	&__icon
+		opacity: 0
+	&.anim
+		#{$p}
+			&__title,
+			&__desc,
+			&__icon
+				animation: s2-anim .8s ease-out 0s 1 forwards
+			&__title
+				animation-delay: 0
+			&__desc
+				animation-delay: .5s
+			&__icon
+				&_1
+					animation-delay: 1s
+				&_2
+					animation-delay: 1.4s
+				&_3
+					animation-delay: 1.8s
+
+@keyframes s2-anim
+	0%
+		transform: translateY(10px)
+		opacity: 0
+	100%
+		transform: translateY(0)
+		opacity: 1
+
+.icon-pluses
+	display: flex
+	flex-direction: column
+	align-items: center
+	&__icon
+		width: 128px
+		height: 128px
+		background-color: $ac
+		display: flex
+		justify-content: center
+		align-items: center
+		border-radius: 50%
+		margin: 0 0 32px
+	&__desc
+		font-family: 'Tele2DisplaySerif', serif
+		font-size: 18px
+		font-weight: 400
+		line-height: 24px
+		color: #000000
+		text-align: center
