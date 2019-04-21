@@ -5,7 +5,8 @@
 		position: absolute
 		z-index: 1
 		bottom: 0
-		width: _col(7, lg)
+		width: 680px
+		height: 594px
 		left: 50%
 		transform: translateX(#{_col(8, lg) * -1})
 	&__content
@@ -27,38 +28,62 @@
 		width: 100%
 		height: 1px
 
-// Анимации
-.sect-3
-	$p: &
-	&__title,
-	&__desc,
-	&__icon
-		opacity: 0
-	&.anim
-		#{$p}
-			&__title,
-			&__desc,
-			&__icon
-				animation: s2-anim .8s ease-out 0s 1 forwards
-			&__title
-				animation-delay: 0
-			&__desc
-				animation-delay: .5s
-			&__icon
-				&_1
-					animation-delay: 1s
-				&_2
-					animation-delay: 1.4s
-				&_3
-					animation-delay: 1.8s
++media(md)
+	.sect-3
+		padding: 56px 0 329px
+		&__anim
+			width: 331px
+			height: 289px
+			transform: translateX(#{_col(6, md) * -1})
+		&__icon
+			&_1, &_2
+				margin-bottom: 32px
 
-@keyframes s2-anim
-	0%
-		transform: translateY(10px)
-		opacity: 0
-	100%
-		transform: translateY(0)
-		opacity: 1
++media(sm)
+	.sect-3
+		&__anim
+			transform: translateX(#{_col(7, sm) * -1})
+
++media(xs)
+	.sect-3
+		&__anim
+			left: -40px
+			right: auto
+			transform: translateX(0)
+
+// Анимации
++media-up(md)
+	.sect-3
+		$p: &
+		&__title,
+		&__desc,
+		&__icon
+			opacity: 0
+		&.anim
+			#{$p}
+				&__title,
+				&__desc,
+				&__icon
+					animation: s2-anim .8s ease-out 0s 1 forwards
+				&__title
+					animation-delay: 0
+				&__desc
+					animation-delay: .5s
+				&__icon
+					&_1
+						animation-delay: 1s
+					&_2
+						animation-delay: 1.4s
+					&_3
+						animation-delay: 1.8s
+
+	@keyframes s2-anim
+		0%
+			transform: translateY(10px)
+			opacity: 0
+		100%
+			transform: translateY(0)
+			opacity: 1
 
 .icon-nav
 	display: flex
@@ -83,6 +108,16 @@
 			text-decoration: underline
 			color: #000000
 
++media(md)
+	.icon-nav
+		flex-direction: row
+		&__icon
+			flex: 0 0 72px
+			max-width: 72px
+			margin: 0 16px 0 0
+		&__desc
+			text-align: left
+
 .s3-anim
 	&__img
 		position: absolute
@@ -97,8 +132,8 @@
 	&__btn
 		position: absolute
 		z-index: 2
-		bottom: 330px
-		right: 343px
+		bottom: 55.5555%
+		right: 50.4411%
 		width: 50px
 		height: 50px
 		border-radius: 50%
@@ -116,6 +151,15 @@
 		&.anim
 			&::before
 				animation: phone-button 1.5s ease-in 0s 3 backwards
+
++media(md)
+	.s3-anim
+		&__img
+			height: 289px
+		&__btn
+			height: 24px
+			width: 24px
+
 
 @keyframes phone-button
 	0%
@@ -158,6 +202,36 @@
 			transform: matrix(0.256228, 0, 0, 0.256228, 4.91996, 49.1996)
 			&.anim
 				animation: s3-anim-arrow-4 .5s ease-in 0s 1 forwards
+
++media(md)
+	.s3-arrow-anim
+		&__arrow
+			margin-left: _col(1, md) * -1
+			bottom: 200px
+			width: 76.6px
+			height: 62.1px
+			&_1
+				transform: matrix(0.961484, 0, 0, 0.961484, 39.977939, 399.77939)
+			&_2
+				transform: matrix(0.66273, 0, 0, 0.66273, 24.29334, 242.9334)
+			&_3
+				transform: matrix(0.423747, 0, 0, 0.423747, 11.74667, 117.4667)
+			&_4
+				transform: matrix(0.256228, 0, 0, 0.256228, 2.95197, 29.5197)
+
++media(xs)
+	.s3-arrow-anim
+		&__arrow
+			margin-left: -70px
+			bottom: 120px
+			&_1
+				transform: matrix(0.961484, 0, 0, 0.961484, 24, 240)
+			&_2
+				transform: matrix(0.66273, 0, 0, 0.66273, 15, 150)
+			&_3
+				transform: matrix(0.423747, 0, 0, 0.423747, 7, 70)
+			&_4
+				transform: matrix(0.256228, 0, 0, 0.256228, 1, 10)
 
 @keyframes s3-anim-arrow-1
 	0%

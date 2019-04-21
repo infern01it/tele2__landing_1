@@ -6,7 +6,17 @@
 	padding: 66px 0 0
 	&__logo
 
++media(xs)
+	.header
+		padding: 26px 0 0
+
 .header-logo
-	display: block
-	width: 114px
-	height: 44px
+	display: inline-block
+	svg
+		width: auto
+		height: 44px
+
++media(xs)
+	.header-logo
+		svg
+			height: 22px

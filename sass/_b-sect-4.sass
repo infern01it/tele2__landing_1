@@ -27,6 +27,31 @@
 			text-decoration: underline
 			transition: all .2s ease-out
 
++media(md)
+	.sect-4
+		padding-top: 300px
+		height: 385px
+		&__anim
+			width: _col(7, md)
+			height: 403px
+			transform: translateX(#{_col(1, md)})
+		&__title,
+		&__desc
+			display: none
+		&__more
+			text-align: left
+
++media(sm)
+	.sect-4
+		&__anim
+			width: _col(7, sm)
+			transform: translateX(#{_col(1, sm)})
+
++media(xs)
+	.sect-4
+		&__anim
+			transform: translateX(-32px)
+
 .s4-anim
 	&__img
 		position: absolute
@@ -38,6 +63,14 @@
 		position: absolute
 		bottom: 370px
 		right: 550px
+
++media(md)
+	.s4-anim
+		&__img
+			height: 403px
+		&__btn
+			bottom: 183px
+			right: 283px
 
 .s4-anim-btn
 	$p: &
@@ -82,6 +115,12 @@
 		background-color: $ac
 		border-radius: 50%
 		opacity: 0
+
++media(md)
+	.s4-anim-btn
+		width: 40px
+		height: 40px
+
 
 @keyframes s4-anim-btn
 	0%

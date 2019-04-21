@@ -1,4 +1,6 @@
 $height: 285px
+$heightSm: 150px
+$heightXs: 65px
 $angle: 8deg
 	
 .sect-main
@@ -24,6 +26,38 @@ $angle: 8deg
 		left: 0
 		width: 100%
 		height: 1px
+
++media(md)
+	.sect-main
+		height: 868px
+		&__layer
+			&_1, &_2
+				height: 580px
+			&_3
+				top: 580px
+				height: 288px
+		&__arrows
+			display: none
+
++media(sm)
+	.sect-main
+		height: 708px
+		&__layer
+			&_1, &_2
+				height: 420px
+			&_3
+				top: 420px
+				height: 288px
+
++media(xs)
+	.sect-main
+		height: 496px
+		&__layer
+			&_1, &_2
+				height: 208px
+			&_3
+				top: 208px
+				height: 288px
 
 .sect-figure
 	&__top,
@@ -59,6 +93,20 @@ $angle: 8deg
 		height: 431px
 		background-color: #000
 
++media(md)
+	.sect-figure
+		&__col-7
+			display: none
+		&__reverse
+			bottom: $heightSm * -1
+			height: ($heightSm * 2)
+
++media(xs)
+	.sect-figure
+		&__reverse
+			bottom: $heightXs * -1
+			height: ($heightXs * 2)
+
 .sect-main-people
 	&__top,
 	&__bottom,
@@ -84,6 +132,30 @@ $angle: 8deg
 		bottom: 0
 		+b4p
 
++media(md)
+	.sect-main-people
+		&__bottom
+			height: $heightSm
+		&__col-6
+			width: _col(6, md)
+		&__img
+			width: 100%
+			height: auto
+
++media(sm)
+	.sect-main-people
+		&__col-6
+			width: _col(6, sm)
+
++media(xs)
+	.sect-main-people
+		&__bottom
+			height: $heightXs
+		&__col-6
+			width: 208px
+			transform: translate(-56px, 20px)
+			padding: 0
+
 .sect-text
 	&__top,
 	&__reverse
@@ -104,6 +176,19 @@ $angle: 8deg
 	&__box
 		width: 100%
 		height: 431px
+
++media(md)
+	.sect-text
+		&__col-7
+			position: relative
+			left: auto
+			bottom: auto
+			transform: translate(0)
+			width: 100%
+			padding: 0
+		&__box
+			background-color: #000000
+			height: 288px
 
 .black-box
 	padding: 49px 41px 66px 49px
@@ -129,6 +214,17 @@ $angle: 8deg
 			margin: 0
 			padding-left: 20px
 
++media(md)
+	.black-box
+		padding: 22px 16px 32px
+		&__title
+			font-size: 24px
+			line-height: 29px
+		&__desc
+			font-size: 16px
+			line-height: 20px
+			margin: 0 0 20px
+
 .arrow-anim-1
 	&__arrow
 		position: absolute
@@ -137,24 +233,28 @@ $angle: 8deg
 		width: 227px
 		height: auto
 		bottom: -189px
-		&_1
-			animation: arrow-1 6s ease-in 0s infinite backwards
-		&_2
-			animation: arrow-1 6s ease-in 1.5s infinite backwards
-		&_3
-			animation: arrow-1 6s ease-in 3s infinite backwards
-		&_4
-			animation: arrow-1 6s ease-in 4.5s infinite backwards
 
-@keyframes arrow-1 
-	0%
-		opacity: 0
-		transform: translate(97px, -370px) scale(0.11)
-	25%, 75%
-		opacity: 1
-	99%
-		opacity: 0
-		transform: translate(170px, 0) scale(1)
-	100%
-		opacity: 0
-		transform: translate(97px, -370px) scale(0.11)
++media-up(md)
+	.arrow-anim-1
+		&__arrow
+			&_1
+				animation: arrow-1 6s ease-in 0s infinite backwards
+			&_2
+				animation: arrow-1 6s ease-in 1.5s infinite backwards
+			&_3
+				animation: arrow-1 6s ease-in 3s infinite backwards
+			&_4
+				animation: arrow-1 6s ease-in 4.5s infinite backwards
+
+	@keyframes arrow-1 
+		0%
+			opacity: 0
+			transform: translate(97px, -370px) scale(0.11)
+		25%, 75%
+			opacity: 1
+		99%
+			opacity: 0
+			transform: translate(170px, 0) scale(1)
+		100%
+			opacity: 0
+			transform: translate(97px, -370px) scale(0.11)

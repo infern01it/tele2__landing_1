@@ -1,5 +1,7 @@
 $height: 285px
-$angle: -16deg
+$heightSm: 150px
+$heightXs: 65px
+$angle: -6deg
 	
 .sect-5
 	width: 100%
@@ -18,6 +20,38 @@ $angle: -16deg
 			z-index: 2
 		&_3
 			z-index: 3
+
++media(md)
+	.sect-5
+		height: 868px
+		&__layer
+			&_1, &_2
+				height: 580px
+			&_3
+				top: 580px
+				height: 288px
+		&__arrows
+			display: none
+
++media(sm)
+	.sect-5
+		height: 708px
+		&__layer
+			&_1, &_2
+				height: 420px
+			&_3
+				top: 420px
+				height: 288px
+
++media(xs)
+	.sect-5
+		height: 812px
+		&__layer
+			&_1, &_2
+				height: 420px
+			&_3
+				top: 420px
+				height: 392px
 
 .sect-5-figure
 	&__top,
@@ -52,6 +86,20 @@ $angle: -16deg
 		height: 541px
 		background-color: #000
 
++media(md)
+	.sect-5-figure
+		&__col-6
+			display: none
+		&__reverse
+			bottom: $heightSm * -1
+			height: ($heightSm * 2)
+
++media(xs)
+	.sect-5-figure
+		&__reverse
+			bottom: $heightXs * -1
+			height: ($heightXs * 2)
+
 .sect-5-main-people
 	&__top,
 	&__bottom,
@@ -61,9 +109,16 @@ $angle: -16deg
 		right: 0
 		width: 100%
 		height: 100%
+	&__top
+		bottom: auto
+		right: auto
+		top: 0
+		left: 0
+		height: calc(100% + #{$height})
 	&__bottom
+		bottom: $height  * -1
 		overflow: hidden
-		height: $height
+		height: ($height * 2)
 		transform-origin: 50% 100%
 		transform: rotate(#{$angle})
 	&__reverse
@@ -75,10 +130,41 @@ $angle: -16deg
 		width: _col(6, lg)
 		left: 50%
 		transform: translateX(-100%)
-		bottom: 0
+		bottom: $height
 		+b4p
 	&__img
 		height: 668px
+
++media(md)
+	.sect-5-main-people
+		&__top
+			height: calc(100% + #{$heightSm})
+		&__bottom
+			bottom: $heightSm  * -1
+			height: ($heightSm * 2)
+		&__col-6
+			width: _col(6, md)
+			transform: translateX(#{_col(3, md) * -1})
+			bottom: $heightSm
+		&__img
+			width: 100%
+			height: auto
+
++media(sm)
+	.sect-5-main-people
+		&__col-6
+			width: _col(6, sm)
+			transform: translateX(#{_col(3, sm) * -1})
+
++media(xs)
+	.sect-5-main-people
+		&__top
+			height: calc(100% + #{$heightXs})
+		&__bottom
+			bottom: $heightXs  * -1
+			height: ($heightXs * 2)
+		&__col-6
+			bottom: $heightXs
 
 .sect-5-text
 	&__top,
@@ -99,3 +185,21 @@ $angle: -16deg
 	&__box
 		width: 100%
 		height: 541px
+
++media(md)
+	.sect-5-text
+		&__col-6
+			position: relative
+			left: auto
+			bottom: auto
+			transform: translate(0)
+			width: 100%
+			padding: 0
+		&__box
+			background-color: #000000
+			height: 288px
+
++media(md)
+	.sect-5-text
+		&__box
+			height: 392px
